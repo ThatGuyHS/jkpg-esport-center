@@ -2,8 +2,19 @@
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
 import { useState } from 'react';
+import { useRef } from 'react';
 
 export default function Home() {
+  
+  const sponsorsRef = useRef<HTMLDivElement>(null); 
+
+
+  const scrollToSponsors = () => {
+    if (sponsorsRef.current) {
+      sponsorsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
 
   const [open, setOpen] = useState(false);
 
@@ -52,12 +63,17 @@ export default function Home() {
   <div className="flex items-center justify-center h-full absolute inset-0 z-20">
     <img src="https://lh4.googleusercontent.com/L-_NsrL1LMJjDO6mNFazyZoAK6Uui2Nc2MNt1qlTnJFhneZJVw61k3-MyW_sTIk9rd-Ip9QQ1mioZgzcVqJ8Uewgn-7NS5SB0wM71RZUMU4NSpMm9gWliI_nJeO8X0SUWA=w1280" className="text-white text-4xl font-bold"/>
   </div>
+  <div className="absolute bottom-5 inset-x-0 text-center animate-bounce cursor-pointer" onClick={scrollToSponsors}>
+          <svg className="mx-auto h-6 w-6 text-white" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+            <path d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
 </div>
    
       
 
       {/* Sections */}
-      <div id="sponsors" className="bg-black py-10">
+      <div ref={sponsorsRef} id="sponsors" className="bg-black py-10">
   <div className="container mx-auto px-4">
     <div className="flex flex-wrap items-center justify-center gap-4">
       
@@ -181,7 +197,7 @@ export default function Home() {
     </div>
     <div className="w-1/2 pl-10">
       <h2 className="text-3xl font-bold mb-2">Let&apos;s get connected!</h2>
-      <button onClick={onOpenModal} className="bg-blue-500 text-white rounded p-2 hover:bg-blue-700 transition duration-300">
+      <button onClick={onOpenModal} className="bg-black text-white rounded p-2 hover:bg-blue-700 transition duration-300">
         Contact Us
       </button>
     </div>
