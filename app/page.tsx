@@ -1,7 +1,17 @@
 "use client"
+import { Modal } from 'react-responsive-modal';
+import 'react-responsive-modal/styles.css';
+import { useState } from 'react';
 
 export default function Home() {
 
+  const [open, setOpen] = useState(false);
+
+  const onOpenModal = () => setOpen(true);
+  const onCloseModal = () => setOpen(false);
+  
+
+  
   const offers = [
     {
       header: "BOOTCAMPS AND TRAINING",
@@ -22,7 +32,13 @@ export default function Home() {
 
   const sponsorLogos = ["https://lh3.googleusercontent.com/OJg1oIzUjK6GychfK4I78NAfwevMWnhm7ZE7BiNdyNdF5g0JaDPGkF2husdQPVdpBEFDf7tR3lmIGowHhzILR2sb0YPadCnANSpr-OlTDJ1MfaTjnAWbBdtldLoleRQ2ng=w1280", "https://lh3.googleusercontent.com/YYaoU1AZVhCo3jAT2UCTHLiziCtyjX2nF9bljfozCKD0Jfm7EijgIN5UBBavgFwmXBrUJKaMN8mZL1hlo7RrMNfFvpNVEVLkfkCKK3uvobW_VTpnu9WYdUY6v27q8IpM=w1280", "https://lh6.googleusercontent.com/VjcRHr9kS3GRaxGxLkVivGCn5NRLgZ1450RmM4RBgcjv7gvBDyiyZb_eTA3UjQud6IP5NqN_MREOqar1n6VsrvNVS3Scx-JgK_ujcWPBCJ4zKnMJ9OlKpfeKiURrjUGYWg=w1280", "https://lh5.googleusercontent.com/77hln2EYgEL-ChcTex_-yJRUIXqYEllHVxPz8jB6l0BiHHbzBsAUlxTIQ1x8ft6M3-2lqKyAhNYAV7bYTYPwOF_I3rA_1se178kZspg2BRg_gMmwNe8tsLJuTClDtG0M7Q=w1280",  "https://lh3.googleusercontent.com/rs5z-_xJnIuXzTDY0VaWGO-SIdxeFAiuct7XfVzbtntaMZxZ06zwBOtqtXw5cRYP3xVGWLkvFKe4r0GjpeaUqTe4KvKhTbm7PGs6Gi9S811dWJD4d5iu_a2ndBT9GSva6g=w1280", "https://lh6.googleusercontent.com/GTM7GmIYDOobmB1hIsEO206cKTRAQpb9IMN5Se5NduQcSTWK1OJHzJ1T0hVPU_6XqniWyVJkM87M-BW7WDiPvFBUDHdR4bJDfiEtUKXGLS_S4W9UboFazf2fDPawZ1foXQ=w1280","https://lh5.googleusercontent.com/f7oXAgr028UMcFgMLrtPTtlxbbpZJ7SBTib6SGaZKC4l_4-O45QNi3jk8TkCqkSG3liNnWwntUkcG52nctImmzNSD5Klr27Fiqf62z7NMPaWgBB77dK0LNM7WcehxqMudQ=w1280", "https://lh4.googleusercontent.com/P4Jh_HstaYRmdqljUOByPI1jtZmaJ1pvmVYvg7HnrAvusmTD8Tr9NGBrtl7XxFiMJlsfNIiCAuOnRr-Ob_4RfxHlm5FV3PEaMVpqPazIm3PRNjpcPFypCBHssFFplycpjA=w1280", "https://lh3.googleusercontent.com/fRZUKKjFFHkGs02YndsAxdmpB1YPBlrR3WowI7QS1PO3h6Q_CBN-dcEoVKPcLa60R9SMhLdQqvLqDLlp6XbkA4WKrDlRgGrIZ8mqs8Rg274CJ6g3UvuV9vewHzkNOWSa4w=w1280" ]
   return (
-    <div className="App">
+    <div className="App scrollbar-hide">
+      <Modal open={open} onClose={onCloseModal} center>
+        <h2>Contact Form</h2>
+        {/* Placeholder content for modal */}
+        <p>Your contact form will go here.</p>
+      </Modal>
+
      <div className="relative h-screen bg-cover bg-hero-pattern">
  
   <div className="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -123,9 +139,9 @@ export default function Home() {
       <p className="mb-4">
         Want to make sure our venue and setups meet your exact requirements?
       </p>
-      <a href="mailto:hello@phoenix.gg" className="text-blue-400 underline">
-        Contact us
-      </a>
+      <button onClick={onOpenModal} className="bg-blue-500 text-white rounded p-2 hover:bg-blue-700 transition duration-300">
+        Contact Us
+      </button>
     </div>
     <div className="w-full lg:w-1/2">
       {/* Replace 'path-to-tech-specs-image.jpg' with the actual image path */}
@@ -165,9 +181,9 @@ export default function Home() {
     </div>
     <div className="w-1/2 pl-10">
       <h2 className="text-3xl font-bold mb-2">Let&apos;s get connected!</h2>
-      <a href="mailto:hello@phoenix.gg" className="text-lg underline text-black">
-        Contact us at hello@phoenix.gg
-      </a>
+      <button onClick={onOpenModal} className="bg-blue-500 text-white rounded p-2 hover:bg-blue-700 transition duration-300">
+        Contact Us
+      </button>
     </div>
   </div>
 </div>
