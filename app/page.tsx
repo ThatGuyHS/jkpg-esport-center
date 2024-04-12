@@ -57,7 +57,7 @@ export default function Home() {
 
 <div id="offers" className="py-10 bg-blue-600">
   <div className="container mx-auto px-4">
-    <h2 className="text-4xl font-bold text-white mb-10 text-center">What's On Offer?</h2>
+    <h2 className="text-4xl font-bold text-white mb-10 text-center">What&apos;s On Offer?</h2>
     <div className="grid md:grid-cols-3 gap-8">
       {offers.map((offer, index) => (
         <div key={index} className="relative group">
@@ -84,7 +84,7 @@ export default function Home() {
       <p className="text-gray-600 text-lg">
         Nestled in the heart of Jonkoping, our venue was created with a singular purpose: to provide a home for gamers, where dreams are realized, rivalries ignite, and friendships are forged. 
         <br/><br/>
-        JEC exists to empower organizations with the ability to host exceptional gaming events, fostering connections and driving growth. With a deep understanding of the industry's pulse, we infuse every event with a palpable sense of excitement and passion.
+        JEC exists to empower organizations with the ability to host exceptional gaming events, fostering connections and driving growth. With a deep understanding of the industrys pulse, we infuse every event with a palpable sense of excitement and passion.
       </p>
     </div>
   </div>
@@ -164,7 +164,7 @@ export default function Home() {
       <img src="https://lh4.googleusercontent.com/Br_avUQn6YHo8P2Lpi-uvhFHtMV_XCo4fK1uBTxYyGqNVbyhwizu59Os8Uy4fSHvGXqwsEW0Bkq_NwRRai0sFvX7FPiEeuBra7QwMwrfdqJaGMzeXMfQ2NIHdSh-EhU=w1280" alt="Network Connections" className="w-full h-auto"/>
     </div>
     <div className="w-1/2 pl-10">
-      <h2 className="text-3xl font-bold mb-2">Let's get connected!</h2>
+      <h2 className="text-3xl font-bold mb-2">Let&apos;s get connected!</h2>
       <a href="mailto:hello@phoenix.gg" className="text-lg underline text-black">
         Contact us at hello@phoenix.gg
       </a>
